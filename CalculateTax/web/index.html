@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人所得税计算器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label, input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .tax-info {
+            text-align: left;
+            font-size: 14px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>个人所得税计算器</h1>
+    <form action="/CalculateTax_war_exploded/Tax" method="get">
+        <label for="income">请输入您的月工资收入：(单位为元)</label>
+        <input type="text" id="income" name="income" required>
+        <button type="submit">计算税额</button>
+    </form>
+    <div class="tax-info">
+        <h3>税率说明：</h3>
+        <p>1. 工资范围在 1-5000 元之间（含5000元），税率为 0%；</p>
+        <p>2. 工资范围在 5000-8000 元之间（含8000元），税率为 3%；</p>
+        <p>3. 工资范围在 8000-17000 元之间（含17000元），税率为 10%；</p>
+        <p>4. 工资范围在 17000-30000 元之间（含30000元），税率为 20%；</p>
+        <p>5. 工资范围在 30000-40000 元之间（含40000元），税率为 25%；</p>
+        <p>6. 工资范围在 40000-60000 元之间（含60000元），税率为 30%；</p>
+        <p>7. 工资范围在 60000-85000 元之间（含85000元），税率为 35%；</p>
+        <p>8. 工资范围在 85000 元以上，税率为 45%。</p>
+    </div>
+</div>
+</body>
+</html>
